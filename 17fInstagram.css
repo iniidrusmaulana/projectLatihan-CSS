@@ -1,0 +1,73 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: Roboto, Arial, sans-serif; background-color: white; }
+
+.container { display: flex; }
+
+/* SIDEBAR KIRI */
+.sidebar {
+  width: 245px; height: 100vh; border-right: 1px solid #dbdbdb;
+  padding: 25px 12px; position: fixed;
+}
+.insta-logo { font-size: 24px; font-weight: bold; margin-bottom: 30px; padding-left: 12px; }
+.nav-item {
+  display: flex; align-items: center; gap: 16px; padding: 12px;
+  margin: 4px 0; cursor: pointer; border-radius: 8px;
+}
+.nav-item:hover { background-color: #fafafa; }
+.nav-item img { width: 24px; height: 24px; }
+.nav-avatar { border-radius: 50%; }
+
+/* CONTENT AREA */
+.content { margin-left: 245px; display: flex; justify-content: center; flex: 1; padding-top: 30px; }
+.feed-container { max-width: 470px; width: 100%; }
+
+/* STORIES */
+.stories-bar { display: flex; gap: 15px; padding: 10px 0 20px 0; overflow-x: auto; }
+.story { display: flex; flex-direction: column; align-items: center; font-size: 12px; width: 66px; }
+.story-circle {
+  width: 60px; height: 60px; border-radius: 50%; padding: 2px;
+  border: 2px solid #e1306c; margin-bottom: 5px;
+}
+.story-circle img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+
+/* POST */
+.post { border-bottom: 1px solid #dbdbdb; margin-bottom: 20px; padding-bottom: 15px; }
+.post-header { display: flex; align-items: center; gap: 10px; padding: 10px 0; font-size: 14px; }
+.post-avatar { width: 32px; height: 32px; border-radius: 50%; }
+
+/* BAGIAN FOTO - AGAR TIDAK GEPENG */
+.post-image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #fafafa;
+  overflow: hidden;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+}
+.post-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Kuncinya biar foto kotak rapi */
+}
+
+.post-footer { padding-top: 12px; }
+.icons-row { display: flex; gap: 15px; margin-bottom: 10px; }
+.icons-row img { width: 24px; cursor: pointer; }
+
+/* SIDEBAR KANAN */
+.suggestions { width: 320px; margin-left: 60px; padding-top: 20px; }
+.user-profile-side { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+.avatar-large { width: 56px; height: 56px; border-radius: 50%; }
+.suggest-header { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 15px; }
+.suggest-item { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 14px; }
+.suggest-item img { width: 32px; height: 32px; border-radius: 50%; }
+.follow-btn { color: #0095f6; font-weight: bold; cursor: pointer; margin-left: auto; }
+
+/* RESPONSIVE */
+@media (max-width: 1160px) { .suggestions { display: none; } }
+@media (max-width: 768px) {
+  .sidebar { width: 72px; }
+  .sidebar span, .insta-logo { display: none; }
+  .content { margin-left: 72px; }
+}
