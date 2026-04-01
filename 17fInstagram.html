@@ -8,6 +8,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <input 
+  type="text" 
+  id="igSearch"
+  placeholder="Search Instagram" 
+  class="search-bar">
+
+<script>
+  const input = document.getElementById("igSearch");
+
+  input.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      const query = input.value.trim();
+      if (query !== "") {
+        window.location.href = "https://www.instagram.com/web/search/topsearch/?query=" + encodeURIComponent(query);
+      }
+    }
+  });
+</script>
 
   <div class="container">
     <nav class="sidebar">
